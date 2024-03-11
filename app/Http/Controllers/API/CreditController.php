@@ -19,10 +19,7 @@ class CreditController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
-    {
-
-    }
+    public function index() {}
 
     /**
      * Show the form for creating a new resource.
@@ -41,8 +38,8 @@ class CreditController extends Controller
             $request->get('interest_after_due'),
             $request->get('grace_period'),
             $request->get('credited_at') ?? now()->format('Y-m-d H:i:s'),
-
         );
+
         return Response($result);
     }
 
@@ -53,6 +50,7 @@ class CreditController extends Controller
     {
         $credit = Credit::with('transactions', 'transactions.transactionItems')->find($id);
         $balance = $this->creditService->getCreditBalance($id);
+
         return ['credit' => $credit, 'balance' => $balance];
     }
 
