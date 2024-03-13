@@ -8,7 +8,4 @@ steps:
       && gcloud app deploy -q --promote -v=$BUILD_ID \
       --project=$PROJECT_ID
 
-options:
-  logging: NONE
-
 timeout: '3600s'
