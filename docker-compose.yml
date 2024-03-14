@@ -6,7 +6,7 @@ services:
                 user: laravel-user
                 uid: 1000
             context: ./
-            dockerfile: Dockerfile
+            dockerfile: _Dockerfile
         image: laravel
         container_name: laravel
         restart: unless-stopped
